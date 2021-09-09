@@ -15,28 +15,29 @@ var insertz = ["spontaneously combusted", "melted into a puddle on the sidewalk"
 randomize.addEventListener('click', result);
 
 function result() {
-var newStory = storyText;
-var xItem = randomValueFromArray(insertx);
-var yItem = randomValueFromArray(inserty);
-var zItem = randomValueFromArray(insertz);
-newStory = newstory.replace(":insertx:", xItem);
-newStory = newStory.replace(":insertx:", xItem);
-newStory = newStory.replace(":inserty:", yItem);
-newStory = newStory.replace(":insertz:", zItem);
+  var newStory = storyText;  
+  var xItem = randomValueFromArray(insertx);
+  var yItem = randomValueFromArray(inserty);
+  var zItem = randomValueFromArray(insertz);
+  
+  newStory = newstory.replace(":insertx:", xItem);
+  newStory = newStory.replace(":insertx:", xItem);
+  newStory = newStory.replace(":inserty:", yItem);
+  newStory = newStory.replace(":insertz:", zItem);
 
   if(customName.value !== '') {
     let name = customName.value;
     newStory = newStory.replace("Bob", name)
 
-  }
+  };
 
   if(document.getElementById("uk").checked) {
-    let weight = Math.round((300 / 14) + " stone");
-    let temperature =  Math.round((94 -= 32) * 1.8) + (" centigrade");
+    let weight = Math.round(300/14) + " stone";
+    let temperature =  Math.round((94-32) * 1.8) + " centigrade";
     newStory = newStory.replace("300 pounds", weight);
     newStory = newStory.replace("94 fahrenheit", temperature);
-  }
+  };
 
   story.textContent = newStory;
   story.style.visibility = 'visible';
-}
+};
